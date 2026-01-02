@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 🌈 Animated Gradient Background */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(
+    -45deg,
+    #0b0014,
+    #1a0033,
+    #ff77b7,
+    #ffd6e8
+  );
+  background-size: 400% 400%;
+  animation: gradientBG 14s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 🌙 Glass Neon Form */
+.form {
+  position: relative;
+  width: 360px;
+  padding: 40px 30px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 105, 180, 0.4);
+  box-shadow:
+    0 0 30px rgba(255, 20, 147, 0.45),
+    inset 0 0 18px rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  animation: floatCard 5s ease-in-out infinite;
+}
+
+@keyframes floatCard {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ✨ Floating Label Wrapper */
+.field {
+  position: relative;
+}
+
+/* Inputs */
+.field input {
+  width: 100%;
+  padding: 14px 14px;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.45);
+  border: 1px solid rgba(255, 105, 180, 0.5);
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+/* Floating Label */
+.field label {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  color: #ffd1e8;
+  font-size: 13px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  transition: 0.3s ease;
+  background: transparent;
+}
+
+/* Float effect */
+.field input:focus + label,
+.field input:not(:placeholder-shown) + label {
+  top: -7px;
+  font-size: 11px;
+  color: #ff69b4;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 0 6px;
+  border-radius: 6px;
+}
+
+/* Focus Glow */
+.field input:focus {
+  box-shadow: 0 0 16px rgba(255, 20, 147, 0.9);
+  border-color: #ff1493;
+}
+
+/* 💗 Button */
+.form button {
+  margin-top: 10px;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #ff77b7, #ff1493);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  letter-spacing: 0.6px;
+  box-shadow: 0 0 22px rgba(255, 20, 147, 0.8);
+  transition: 0.4s;
+}
+
+.form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 40px rgba(255, 105, 180, 1);
+}
+
+/* 🎨 Output (Minimal Pastel) */
+.output {
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  font-size: 14px;
+  border-left: 4px solid #ff77b7;
+  animation: fadeUp 0.5s ease;
+}
+
+.output b {
+  color: #ffd1e8;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
